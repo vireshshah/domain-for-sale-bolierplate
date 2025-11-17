@@ -15,20 +15,46 @@ try {
     process.exit(1);
   }
 
-  console.log('📦 Cloning template...');
-  execSync(
-    `git clone --depth 1 https://github.com/vireshshah/domain-for-sale-boilerplate.git ${projectName}`,
-    { stdio: 'inherit' }
-  );
+  fs.mkdirSync(projectName, { recursive: true });
 
-  // Remove .git directory
-  const gitDir = path.join(projectName, '.git');
-  if (fs.existsSync(gitDir)) {
-    fs.rmSync(gitDir, { recursive: true, force: true });
-  }
+  console.log('📦 Downloading template...');
+  
+  // Install the package temporarily to get the files
+  const tempDir = path.join(process.cwd(), '.temp-template');
+  fs.mkdirSync(tempDir, { recursive: true });
+  
+  execSync(`npm pack domain-for-sale-boilerplate`, { 
+    cwd: tempDir,
+    stdio: 'ignore'
+  });
+  
+  // Extract the tarball
+  const tarball = fs.readdirSync(tempDir).find(f => f.endsWith('.tgz'));
+  execSync(`tar -xzf ${tarball}`, { cwd: tempDir, stdio: 'ignore' });
+  
+  // Copy files from package to project directory
+  const packageDir = path.join(tempDir, 'package');
+  const filesToCopy = ['app', 'config', 'public', 'next.config.js', 'tailwind.config.js', 
+                       'postcss.config.js', 'tsconfig.json', 'package.json', 'README.md',
+                       'netlify.toml', '.gitignore'];
+  
+  filesToCopy.forEach(file => {
+    const src = path.join(packageDir, file);
+    const dest = path.join(projectName, file);
+    if (fs.existsSync(src)) {
+      if (fs.lstatSync(src).isDirectory()) {
+        fs.cpSync(src, dest, { recursive: true });
+      } else {
+        fs.copyFileSync(src, dest);
+      }
+    }
+  });
+  
+  // Cleanup temp directory
+  fs.rmSync(tempDir, { recursive: true, force: true });
 
   console.log('\n📥 Installing dependencies...');
-  execSync(`cd ${projectName} && npm install`, { stdio: 'inherit' });
+  execSync(`npm install`, { cwd: projectName, stdio: 'inherit' });
 
   console.log(`\n✅ Success! Your domain site is ready.\n`);
   console.log(`Next steps:\n`);
