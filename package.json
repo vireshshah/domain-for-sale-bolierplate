@@ -1,6 +1,6 @@
 {
   "name": "domain-for-sale-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modern, open-source domain for sale landing page built with React 19, Next.js 16, and Tailwind CSS. EmailJS integration, reCAPTCHA protection, and platform-independent deployment.",
   "main": "index.js",
   "bin": {
