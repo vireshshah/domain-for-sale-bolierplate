@@ -1,0 +1,50 @@
+{
+  "seo": {
+    "title": "PremiumDomain.com - Premium Domain For Sale",
+    "description": "Premium domain name available for purchase. Perfect for startups, businesses, or personal branding. Secure this memorable domain today.",
+    "keywords": "premium domain, domain for sale, buy domain, brandable domain, startup domain",
+    "ogImage": "/images/og-image.jpg",
+    "favicon": "/favicon.ico"
+  },
+  "domain": {
+    "name": "PremiumDomain.com",
+    "price": "$4,999",
+    "priceNumeric": 4999,
+    "currency": "USD",
+    "showPrice": false,
+    "showInquiryForm": true,
+    "headline": "Own a Premium .com Domain - Perfect for Your Next Big Project",
+    "description": "This premium domain name is short, memorable, and perfect for building a strong online presence. Whether you're launching a startup, building a personal brand, or establishing an enterprise, this domain provides the foundation for success. Premium domains like this are rare assets that appreciate in value over time. The .com extension remains the most trusted and recognized domain ending globally, making it ideal for businesses targeting international markets. Don't miss this opportunity to secure a brandable domain that will set you apart from the competition and establish instant credibility with your audience."
+  },
+  "contact": {
+    "email": "contact@example.com",
+    "name": "Domain Owner",
+    "responseTime": "24-48 hours"
+  },
+  "otherDomains": [
+    {
+      "name": "AnotherPremiumDomain.com",
+      "url": "https://example.com"
+    },
+    {
+      "name": "YetAnotherDomain.com",
+      "url": "https://example.com"
+    }
+  ],
+  "recaptcha": {
+    "siteKey": "your-recaptcha-site-key-here"
+  },
+  "emailjs": {
+    "enabled": true,
+    "publicKey": "your-emailjs-public-key",
+    "serviceId": "your-service-id",
+    "templateId": "your-template-id",
+    "toEmail": "contact@example.com"
+  },
+  "analytics": {
+    "googleAnalytics": {
+      "enabled": false,
+      "trackingId": "G-XXXXXXXXXX"
+    }
+  }
+} 

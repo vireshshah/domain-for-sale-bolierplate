@@ -1,0 +1,78 @@
+{
+  "name": "domain-for-sale-boilerplate",
+  "version": "1.0.0",
+  "description": "Modern, open-source domain for sale landing page built with React 19, Next.js 16, and Tailwind CSS. EmailJS integration, reCAPTCHA protection, and platform-independent deployment.",
+  "main": "index.js",
+  "bin": {
+    "create-domain-site": "./bin/cli.js"
+  },
+  "files": [
+    "app",
+    "config",
+    "public",
+    "bin",
+    "*.config.js",
+    "*.config.ts",
+    "*.toml",
+    "*.md"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "domain-for-sale",
+    "landing-page",
+    "react",
+    "nextjs",
+    "next16",
+    "react19",
+    "tailwindcss",
+    "emailjs",
+    "recaptcha",
+    "boilerplate",
+    "template",
+    "ssr",
+    "netlify",
+    "vercel",
+    "domain-marketplace"
+  ],
+  "author": "Viresh Shah <vireshshah@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vireshshah/domain-for-sale-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vireshshah/domain-for-sale-boilerplate/issues"
+  },
+  "homepage": "https://github.com/vireshshah/domain-for-sale-boilerplate#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.18.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@headlessui/react": "^2.2.9",
+    "@heroicons/react": "^2.2.0",
+    "next": "^16.0.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-google-recaptcha": "^3.1.0",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@types/react-google-recaptcha": "^2.1.9",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.0.3",
+    "postcss": "^8.5.6",
+    "typescript": "^5.9.3"
+  }
+}
